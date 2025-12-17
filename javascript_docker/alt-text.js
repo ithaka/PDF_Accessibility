@@ -76,7 +76,7 @@ const invokeModel = async (
     imageBuffer = null,
 ) => {
     // Create a new Bedrock Runtime client instance.
-    const client = new BedrockRuntimeClient({ region: AWS_REGION });
+    const client = new BedrockRuntimeClient({ region: "us-east-1" });
     const model_arn_image = process.env.model_arn_image;
     
     // Convert the image buffer to a base64-encoded string
@@ -237,7 +237,7 @@ const invokeModel_alt_text_links = async (
     modelId = "us.amazon.nova-pro-v1:0"
 ) => {
     logger.info(`generating link alt text`);
-    const client = new BedrockRuntimeClient({ region: AWS_REGION });
+    const client = new BedrockRuntimeClient({ region: "us-east-1" });
     const model_arn_link = process.env.model_arn_link
     const payload = {
         system: [
